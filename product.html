@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品详情</title>
+		<link rel="shortcut icon" href="http://www.gjw.com/favicon.ico">
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<!--载入页面开头-->
+		<div class="head">
+			
+		</div>
+		
+		<!--主体部分开始-->
+		<div class="proBasicInfo wrap" good-gid="10002">
+			<div class="subNav">
+				<a href="javascript:;">首页</a>
+				<span>&gt;</span>
+                <a href="javascript:;">白酒</a>
+                <span>&gt;</span>
+                <a href="javascript:;">百年传奇</a>
+                <span>&gt;</span> 
+                <a class="curName"></a>
+			</div>
+			<!--图片预览-->
+			<div class="proImgBox">
+				<div class="proImg l">
+					<div class="proImgBig">
+						<img src="" alt="" />
+					</div>
+					<div class="proImgList">
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="proMsgBox l">
+					<h3 class="title"></h3>
+					<p class="redf">闪购爆款 下手要快</p>
+					<div class="priceBox">
+						<p><b>参考价：</b> ¥<span class="good_price"></span></p>
+						<p><b>活动价：</b> ¥<span class="good_curprice"></span></p>
+						<p><b>促销信息：</b><i>限时抢购</i> <span>已优惠¥<b class="prefer"></b>元</span></p>
+					</div>
+					<div class="transTo">
+						<b>配送至：</b>
+						<span>上海(现货)<i>&gt;</i></span>
+						单笔订单不满100元，收运费10元，满百包邮
+					</div>
+					<p class="focus">
+						<span>关注度 <b> 9336</b></span>
+						<i>|</i>
+						<span>累计评价<b> 12</b></span>
+					</p>
+					<div class="good_class clear">
+						<b>分类：</b>
+						<ul>
+							<li class="active">浓香型第六感的</li>
+							<li>浓香型</li>
+							<li>浓香型</li>
+						</ul>
+					</div>
+					<div class="pro_count">
+						<b>数量：</b>
+						<input type="text" value="1"/>
+						<a href="javascript:;" class="oper add">+</a>
+						<a href="javascript:;" class="oper redu">-</a>
+						<span>库存：<b class="stock"></b></span>
+					</div>
+					<div class="goods_btn">
+						<a href="javascript:;" class="addBuy btn">立即购买</a>
+						<a href="javascript:;" class="addtoCat btn">加入购物车</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--载入页面结尾-->
+		<div class="footer">
+			
+		</div>	
+		<!--引入js文件-->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		<script src="js/loadPublic.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script src="js/proInfo.js"></script>
+		<script>
+			$(function(){
+				$('.good_class ul').on('click','li',function(){
+					$(this).addClass('active').siblings().removeClass('active');
+				})
+			});
+		</script>
+	</body>
+</html>

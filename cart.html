@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<link rel="shortcut icon" href="http://www.gjw.com/favicon.ico">
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<!--顶部导航-->
+		<div class="cart_topbar">
+			<div class="wrap">
+				<div class="left l">
+					<a href="javascript:;"><b>登录</b></a>
+					<a href="javascript:;">注册</a>
+				</div>
+				<ul class="right r">
+					<li  class="pro_cart">
+						<a href="javascript:;">购物车<b class='count'>2</b>件 <u></u></a>
+						<div class="cartbox">
+							<!--购物车中内容-->
+							<div class="cart_con clear">
+								
+							</div>
+							<p class="pro_count">共<b>2</b>件商品</p>
+							<p class="total_mon">金额总计：<b>243</b>元</p>
+						</div>
+					</li>
+					<li>
+						<a href="javascript">我的订单 </a>
+					</li>
+					<li class="user">
+						<a href="javascript:;">
+							<span>用户中心</span>
+							<u></u>
+						</a>
+						<ul class="userlist">
+							<!--用户中心的下拉列表-->
+							<li><a href="">商品评论</a></li>
+							<li><a href="">收藏夹</a></li>
+							<li><a href="">我的电子券</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">帮助</a>
+					</li>
+					<li>
+						<a href="javascript:;"><b>提建议</b></a>
+					</li>
+					<li>
+						<a href="javascript:;"><b>微博</b></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--顶部导航结束-->
+		<!--顶部logo/搜索框开始-->
+			<div class="cart_searchBox wrap">
+			<a href="javascript:;" class="logo l">
+				<img src="img/hd_logo.jpg" alt="" />
+			</a>
+			<div class="searchBox l">
+				<input type="text" class='seach'/>
+				<a href="" class="srach_btn">搜索</a>
+			</div>
+		</div>
+		<!--购物车主体部分开始-->
+		<div class="wrap">
+			<div class="cart_contain">
+				<div class="title clear">
+					<ul class="l">
+						<li>全部商品 <b class="count"></b></li>
+						<li>降价商品<b>0</b></li>
+						<li>库存紧张<b>0</b></li>
+					</ul>
+					<div class="cart_info r">
+						<span>已选商品（不含运费和进口税） <b>￥0.00</b></span>
+						<a href="javascript:;" class="pay">结算</a>
+					</div>
+				</div>
+				<!--购物车商品详情开始-->
+				<div class="cart_proInfo clear">
+					<ul class="th_title clear">
+						<li>
+							<input type="checkbox" class='check_all'/>
+							<span>全部</span>
+						</li>
+						<li class="pro_name"><span>商品</span></li>
+						<li><span>单价</span></li>
+						<li><span>优惠</span></li>
+						<li class="pro_num"><span>数量</span></li>
+						<li><span>小计</span></li>
+						<li><span>操作</span></li>
+					</ul>
+					<div class="cart_pro">
+						<!--购物车商品列表开始-->
+						<div class="tr_pro">
+							
+						</div>
+						<!--购物车商品列表结束-->
+						<div class="cart_tip">
+							<p>电子券在 <b>结算</b> 页面中使用</p>
+						</div>
+						<!--结算-->
+						<ul class="account clear">
+							<li>
+								<input type="checkbox" class='check_all'/>
+								<span>全部</span>
+							</li>
+							<li class="sel_delect"><a href="javascript:;">删除选中商品</a></li>
+							<li class="empty_cart"><a href="javascript">清空购物车</a></li>
+							<li class="space">&nbsp;</li>
+							<li class="pay_count">当前选中 <b>0</b> 件</li>
+							<li class="pay_money">应付商品金额：<b>¥0.00</b></li>
+						</ul>
+						<div class="pay_btn">
+							<a href="product.html" class="btn continue">&nbsp;继续购物<span></span></a>
+							&nbsp;&nbsp;&nbsp;
+							<span>商品价格和库存请以订单提交时为准</span>
+							<a href="javascript:;" class="btn pay">结算<span></span></a>
+						</div>
+					</div>
+				</div>
+				<!--购物车商品详情结束-->
+			</div>
+		</div>
+		<!--购物车主体部分结束-->
+		
+		<script src="js/jquery.1.11.3.min.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script src="js/cart.js"></script>
+		<script src="js/loadPublic.js"></script>
+		<script>
+			$(function(){
+				$('.cart_topbar .right .user').hover(function(){
+					$(this).find('.userlist').toggle();
+				});
+				$('.cart_topbar .right .pro_cart').hover(function(){
+					$(this).find('.cartbox').toggle();
+				});
+			});
+		</script>
+	</body>
+</html>
