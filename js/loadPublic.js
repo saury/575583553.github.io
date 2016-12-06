@@ -1,6 +1,39 @@
 $(function(){
 	$('.head').load('head.html',function(){
+		$('.good_info .navbar_all').hover(function(){
+			$('.main').stop(true).fadeToggle(400);
+			
+		});
+		//头部悬浮广告
+		/*$('.noticeBar .noticeBar_img .small').animate({
+			top: 83
+		},400,function(){
+			$('.noticeBar .noticeBar_img .small').hide();
+			$('.noticeBar .noticeBar_img').animate({
+				height: 270
+			},800,function(){
+				$('.noticeBar .noticeBar_img').animate({
+					height: 83
+				},600,function(){
+					$('.noticeBar .noticeBar_img .small').show();
+					$('.noticeBar .noticeBar_img .small').animate({
+						top:0
+					});
+				});
+				
+			});
+		});
+		$('.noticeBar .noticeBar_img').animate({
+			height: 270
+		},800,function(){
+			$('.noticeBar .noticeBar_img').delay(3000).animate({
+				height: 83
+			},600);
+		});*/
+		
+		//二级菜单
 		$('.all_count .item').mouseenter(function(){
+			
 			//二级菜单
 			var item = $('.er_list .op');
 			var index = parseInt($(this).index() - 1);
@@ -16,6 +49,26 @@ $(function(){
 			$('.er_list').hide();
 		});
 	});
+	
+	//加载尾部内容
+	$('.foot').load('footer.html',function(){
+		//链接滚动
+		var main = $('.footer .link_slide ul');
+		var li = main.find('li').eq(0).clone(true);
+		main.append(li);
+		var index = 0;
+		setInterval(function(){
+			index++;
+			if(index >= 5){
+				main.css({top:0});
+				index = 1;
+			}
+			main.animate({
+				top: -33*index
+			},500);
+		},1500);
+	});
+	
 	//公共的缩小版购物车
 	var cart = JSON.parse( $.cookie('gjw_cart') );
 	var money = 0;

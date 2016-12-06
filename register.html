@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册—购酒网</title>
+		<link rel="shortcut icon" href="http://www.gjw.com/favicon.ico">
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<div class="login_head">
+			<div class="wrap">
+				<a href="javascript:;" class="logo">
+					<img src="img/hd_logo.jpg" alt="" />
+				</a>
+				<div class="login_line r">
+					<p>如您已有账户 
+						<a href="login.html" style="color: #C40000;">请登录</a> 
+						&nbsp;
+						<a href="javascript:;">帮助 </a>
+						&nbsp;
+						<a href="javascript:;" style="color: #C40000;">在线帮助</a>
+					</p>
+				</div>
+			</div>
+			
+		</div>
+		<div class="login_contain">
+			<div class="bg"></div>
+			<div class="mid reg_mid">
+				<div class="reg_box clear">
+					<div class="tabForm">
+						<ul class="tabFrom_nav">
+							<li>
+								<a href="javascript:;">
+									<i class="mobileIcon icon"></i>
+									手机注册
+								</a>
+								<div class="actBd"></div>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<i class="malieIcon icon"></i>
+									邮箱注册
+								</a>
+								<div class="actBd"></div>
+							</li>
+						</ul>
+						<div class="formBox clear">
+							<form action="" class="l">
+								<div class="mgnAuto">
+									<div class="text_box">
+										<label for=""> 手机号 :</label>
+	                                	<input type="text" class="phone">
+	                            		<strong class="error"><b class="errorIcon"></b>请输入正确手机号</strong>
+									</div>
+									<div class="text_box mgTop12">
+										<label for=""> 设置密码 :</label>
+	                                	<input type="password" class="psw" placeholder="6-20个非空格字符 ">
+	                            		<strong class="error"><b class="errorIcon"></b>请输入正确的密码</strong>
+									</div>
+									<div class="text_box">
+										<label for=""> 确认密码:</label>
+	                                	<input type="password" class="psw"/>
+	                            		<strong class="error"><b class="errorIcon"></b>两次密码输入需一致</strong>
+									</div>
+									<div class="mgTop12 codeBox clear">
+		                                <div class="text_box  codeText_s l">
+		                                    <label for="">验证码 :</label>
+		                                    <input type="text">
+		                                </div>
+	                                	<span class="codeNum l">1875</span>
+	                                	<a class="blue fl" onclick="javascript:changeCode()">换一张</a>
+	                            	</div>
+	                            	<div class="text_box mgTop12">
+		                                <label for=""> 校验码 :</label>
+		                                <a class="regCodeBtn btn">获取校验码</a> 
+		                                <i class="mobileIcon"></i>
+		                                <input type="text" class="codeText">
+		                            </div>
+		                            <p class="xieyi">点击注册，表示您同意购酒网 
+		                            	<a class="blue" href="http://www.gjw.com/help/show-id-47.htm" target="_blank">《服务协议》</a>
+		                            </p>
+		                            <a href="javascript:;" class="regBtn">注册</a>
+								</div>
+							</form>
+							<form action="" class="l">
+								<div class="mgnAuto">
+									<div class="text_box">
+										<label for=""> <b class="red">*</b>邮箱 :</label>
+	                                	<input type="text" class="phone">
+	                            		<strong class="error"><b class="errorIcon"></b>请输入正确手机号</strong>
+									</div>
+									<div class="text_box mgTop12">
+										<label for=""><b class="red">*</b>设置密码 :</label><!--
+	                                	--><input type="password" class="psw" placeholder="6-20个非空格字符 ">
+	                            		<strong class="error"><b class="errorIcon"></b>请输入正确的密码</strong>
+									</div>
+									<div class="text_box">
+										<label for=""><b class="red">*</b>确认密码:</label>
+	                                	<input type="password" class="psw"/>
+	                            		<strong class="error"><b class="errorIcon"></b>两次密码输入需一致</strong>
+									</div>
+									<div class="mgTop12 codeBox clear">
+		                                <div class="text_box  codeText_s l">
+		                                    <label for="">验证码 :</label>
+		                                    <input type="text">
+		                                </div>
+	                                	<span class="codeNum l">1875</span>
+	                                	<a class="blue fl" onclick="javascript:changeCode()">换一张</a>
+	                            	</div>
+	                            	<div class="text_box mgTop12">
+		                                <label for=""> 校验码 :</label>
+		                                <a class="regCodeBtn btn">获取校验码</a> 
+		                                <i class="mobileIcon"></i>
+		                                <input type="text" class="codeText">
+		                            </div>
+		                            <p class="xieyi">点击注册，表示您同意购酒网 
+		                            	<a class="blue" href="http://www.gjw.com/help/show-id-47.htm" target="_blank">《服务协议》</a>
+		                            </p>
+		                            <a href="javascript:;" class="regBtn">注册</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<a class="l adBox" href="index.html">
+                        <img alt="周年庆" src="img/login1.jpg" >
+					</a>
+				</div>
+			</div>
+				
+		</div>
+		<div class="login_foot">
+			<p class="link">
+				<a href="javascript:;">关于我们</a>
+				<span>|</span>
+				<a href="javascript:;">联系我们</a>
+				<span>|</span>
+				<a href="javascript:;">人才招聘</a>
+				<span>|</span>
+				<a href="javascript:;">隐私声明</a>
+				<span>|</span>
+				<a href="javascript:;">帮助中心</a>
+				<span>|</span>
+				<a href="javascript:;">友情链接</a>
+			</p>
+			<p>Copyright©2009-2016 gjw.com, All Rights Reserved 上海购酒网电子商务有限公司 版权所有</p>
+		</div>
+		
+		<script src="js/jquery.1.11.3.min.js"></script>
+		<script>
+			$(function(){
+				//背景图片滚动
+				var t = 0;
+				setInterval(function(){
+					t++;
+					var height = $('.bg').height() - $('.bg').parent().height();
+					if(t >= height){
+						t = 0;
+					}
+					$('.bg').css({
+						top: -t,
+						left: -t
+					});
+				},80);
+				
+				//切换注册方式
+				$('.tabFrom_nav>li').click(function(){
+					var index = $(this).index();
+					$(this).find('.actBd').show();
+					$(this).siblings().find('.actBd').hide();
+					$('.formBox').animate({
+						left: -index*600
+					},600);
+				});
+				
+			});
+		</script>
+	</body>
+</html>

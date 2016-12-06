@@ -185,6 +185,7 @@
 	position: relative;
 }
 .topSearch .topCart .cartbox {
+	display: none;
 	width: 240px;
 	top: 36px;
 	background: #ccc;
@@ -219,7 +220,7 @@
 	border-bottom: 2px solid #c40000;
 }
 .nav .navbar_all .all {
-	width: 210px;
+	width: 227px;
 	height: 35px;
 	background: #ba000c;
 	color: #fff;
@@ -257,11 +258,18 @@
 .nav .nav_right {
 	margin-top: -3px;
 }
-
-.all_count {
+.navbar_all {
 	position: relative;
-	z-index: 999;
-	width: 210px;
+}
+.navbar_all .main {
+	z-index: 9999;
+	position: absolute;
+	top: 37px;
+	left: 0;
+}
+.all_count {
+	position: absolute;
+	width: 226px;
 	background: #c81623;
 }
 .all_count li a.op_item {
@@ -275,7 +283,7 @@
 	border-radius: 8px;
 	padding: 0 4px 3px 4px;
 	color: #C40000;
-	margin: 0 7px 0  -5px;
+	margin: 0 11px 0  -5px;
 }
 .all_count li{
 	padding: 6px 10px 5px;
@@ -318,8 +326,8 @@ ul.er_list{
 	z-index: 9999;
 	position: absolute;
 	padding-left: 30px;
-	top: 36px;
-	left: 322px;
+	top: 0px;
+	left: 226px;
 	width: 1030px;
 	height: 450px;
 	background: #fff;
@@ -391,6 +399,82 @@ ul.er_list .op_right img{
 	border-bottom: 1px solid #ccc;
 }
 
+.good_info .navbar_all .main {
+	display: none;
+}
 /*头部结束*/
 
 /*尾部开始*/
+.footer .foot_top {
+	padding-top: 6px;
+	height: 343px;
+	background: url(../img/footer_Bg.gif);
+	color: #fff;
+}
+.footer .foot_top .top {
+	height: 118px;
+	border-bottom: 2px solid #787878;
+}
+.footer .foot_top .top_left {
+	width: 843px;
+	padding-top: 20px;
+}
+.footer .foot_top .top_left a.online>img {
+	margin-top: 40px;
+}
+.footer .foot_top .top_right p {
+	float: left;
+	margin: 20px 20px 0 0;
+	font: 12px/22px "";
+	text-align: right;
+}
+.footer .foot_top .top_right img {
+	float: left;
+	width: 105px;
+	height: 105px;
+}
+.footer .foot_top .top_right strong {
+	font-weight: 700;
+}
+.footer .foot_top .foot_list {
+	margin-top: 36px;
+	padding-left: 100px;
+}
+.footer .foot_top .foot_list li {
+	float: left;
+	width: 171px;
+}
+.footer .foot_top .foot_list li a {
+	display: block;
+	color: #a9a9a9;
+	font: 12px/24px "";
+}
+.footer .foot_top .foot_list li a b {
+	color: #fff;
+	font: 700 14px/30px "";
+}
+.footer .foot_top .foot_list li a i {
+	color: #ffd312;
+}
+.footer .foot_bottom {
+	text-align: center;
+}
+.footer .foot_bottom img.aut {
+	margin-top: 10px;
+}
+.footer .foot_bottom .link_slide {
+	position: relative;
+	height: 33px;
+	overflow: hidden;
+}
+.footer .foot_bottom .link_slide ul {
+	position: relative;
+	height: 500%;
+}
+.footer .foot_bottom .link_slide ul li {
+	height: 33px;
+	font: 12px/33px "";
+}
+.footer .foot_bottom .link_slide a {
+	color: #333;
+}

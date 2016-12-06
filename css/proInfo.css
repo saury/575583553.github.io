@@ -1,0 +1,669 @@
+.subNav {
+	line-height: 50px;
+}
+.subNav .curName {
+	color: #C40000;
+}
+.proImgBox .proImg {
+	position: relative;
+	width: 420px;
+	text-align: center;
+}
+.proImgBox .proImg .bigImg {
+	display: none;
+	z-index: 99;
+	position: absolute;
+	top: 0;
+	left: 450px;
+	width: 420px;
+	height:400px;
+	border: 1px solid #DADADA;
+	overflow: hidden;
+}
+.proImgBox .proImg .modal {
+	display: none;
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	top: 0;
+	left: 0;
+	background: #eee;
+	border: 1px solid #ccc;
+	opacity: 0.3;
+}
+.proImgBox .proImg .proImgBig {
+	border: 1px solid #C9C9C9;
+}
+.proImgBox .proImg .proImgList {
+	position: relative;
+    width: 418px;
+    height: 89px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-top: none;
+}  
+.proImgBox .proImg .proImgList li {
+	float: left;
+	width: 64px;
+	height: 64px;
+	margin: 10px;
+	padding: 2px;
+	border: 2px solid #fff;
+	cursor: pointer;
+}
+.proImgBox .proImg .proImgList li.active,
+.proImgBox .proImg .proImgList li:hover {
+	border: 2px solid #C40000;
+}
+.proImgBox .proImg .proImgList li img {
+	width: 100%;
+}
+.proImgBox .proImg .share {
+	position: relative;
+	border: 1px solid #ccc;
+    height: 38px;
+    padding: 0 24px;
+    line-height: 38px;
+    border-top: none;
+    color: #999;
+    vertical-align: middle;
+    line-height: 38px;
+    text-align: left;
+}
+.proImgBox .proImg .share i {
+	float: right;
+	cursor: pointer;
+}
+.proImgBox .proImg .share i:hover {
+	color: #C40000;
+}
+.proImgBox .proImg .share>a {
+	position: relative;
+	top: 3px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../img/icons_0_16.png) no-repeat;
+}
+.proImgBox .proImg .share>a:nth-child(1){
+	background-position: 0 0px;
+}
+.proImgBox .proImg .share>a:nth-child(2){
+	background-position: 0 -1612px;
+}
+.proImgBox .proImg .share>a:nth-child(3){
+	background-position: 0 -52px;
+}
+.proImgBox .proImg .share>a:nth-child(4){
+	background-position: 0 -104px;
+}
+.proImgBox .proImg .share>a:nth-child(5){
+	background-position: 0 -260px;
+}
+.proImgBox .proImg .share>a:nth-child(6){
+	background-position: 0 -208px;
+}
+.proImgBox .proImg .share .addShare {
+	display: none;
+	position: absolute;
+	top: -367px;
+	left: 187px;
+	width: 230px;
+	
+	background: #fff;
+	border: 1px solid #dadada;
+}
+.good_main .left .catBox p.title,
+.proImgBox .proImg .share .addShare p.title {
+	background: #F6F6F6;
+	font: 700 14px/30px "";
+	color: #333;
+}
+.proImgBox .proImg .share .addShare p.more {
+	cursor: pointer;
+	text-align: right;
+	border-top: 1px solid #dadada;
+}
+.proImgBox .proImg .share .addShare p.more span {
+	position: relative;
+	top: 5px;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url(../img/icons_0_16.png) no-repeat 0 0;
+}
+.proImgBox .proImg .share .addShare li {
+	float: left;
+	width: 115px;
+}
+.proImgBox .proImg .share .addShare li:hover {
+	background: #eee;
+}
+.proImgBox .proImg .share .addShare li span {
+	position: relative;
+	top: 5px;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin: 0 5px 0 10px;
+	background: url(../img/icons_0_16.png) no-repeat 0 -208px;
+	
+}
+.proImgBox .proMsgBox h3 {
+	font: 700 18px/30px '微软雅黑';
+	color: #000;
+}
+.proImgBox .proMsgBox .redf {
+	color: #C40000;
+}
+.proImgBox .proMsgBox .priceBox {
+	margin-top: 10px;
+    padding: 10px 0 10px 15px;
+    background: url(../img/priceBg.gif) no-repeat left center;
+    width: 520px;
+}
+.proImgBox .proMsgBox {
+	width: 524px;
+	margin-left: 38px;
+}
+.proImgBox .proMsgBox .good_price {
+	text-decoration: line-through;
+}  
+.proImgBox .proMsgBox .priceBox p {
+	margin: 10px 0;
+}
+.proImgBox .proMsgBox .priceBox i {
+	background: #c40000;
+    color: #fff;
+    line-height: 18px;
+    padding: 4px;
+}  
+.proImgBox .proMsgBox .good_curprice {
+	font: 700 22px '';
+	color: #C40000;
+} 
+.proImgBox .proMsgBox .pro_count {
+	position: relative;
+}
+.proImgBox .proMsgBox .pro_count input{
+	width: 36px;
+	height: 28px;
+	border: 1px solid #c9c9c9;
+}
+.proImgBox .proMsgBox .pro_count .oper {
+	position: absolute;
+	left: 102px;
+	width: 20px;
+	height: 12px;
+	border: 1px solid #c9c9c9;
+	text-align: center;
+	line-height: 12px;
+}
+.proImgBox .proMsgBox .pro_count .add {
+	top: 0;
+}
+.proImgBox .proMsgBox .pro_count .redu {
+	top: 16px;
+}
+.proImgBox .proMsgBox .pro_count span {
+	margin-left: 50px;
+}
+.proImgBox .proMsgBox .transTo {
+	position: relative;
+	margin-top: 10px;
+	line-height: 40px;
+}
+.proImgBox .proMsgBox .transTo .area {
+	display: none;
+	z-index: 99;
+	position: absolute;
+	top: 40px;
+	left: 60px;
+	width: 480px;
+	padding: 10px;
+	border: 1px solid #dadada;
+	background: #fff;
+}
+.proImgBox .proMsgBox .transTo .area a {
+	color: #666;
+}
+.proImgBox .proMsgBox .transTo .area a:hover {
+	color: #C40000;
+}
+.proImgBox .proMsgBox .transTo span {
+	position: relative;
+	padding: 10px;
+	border: 1px solid #dadada;
+}
+.proImgBox .proMsgBox .transTo span i {
+	font-weight: 700;
+}
+.proImgBox .proMsgBox .focus {
+	margin-top: 17px;
+    height: 36px;
+    line-height: 36px;
+    border-top: 1px dashed #c9c9c9;
+    border-bottom: 1px dashed #c9c9c9;
+}  
+.proImgBox .proMsgBox .focus span:nth-child(1){
+	margin-left: 50px;
+}
+.proImgBox .proMsgBox .focus span b {
+	color: #C40000;
+	font-weight: 700;
+} 
+.proImgBox .goods_btn {
+	margin-top: 20px;
+}
+.proImgBox .goods_btn .btn {
+	float: left;
+	width: 180px;
+	height: 38px;
+	border: 1px solid #C40000;
+	text-align: center;
+	font: 14px/38px "";
+}
+.proImgBox .goods_btn .addBuy {
+	background: #ffeeee;
+	color: #B60404;
+}
+.proImgBox .goods_btn .addtoCat {
+	background: #B60404;
+	color: #fff;
+	margin-left: 5px;
+}
+.proImgBox .good_class {
+	padding-left: 60px;
+	margin: 10px 0;
+}
+.proImgBox .good_class b {
+	float: left;
+	margin-left: -60px;
+}
+.proImgBox .good_class ul {
+	float: left;
+}
+.proImgBox .good_class ul li {
+	float: left;
+	height: 28px;
+	padding: 0 10px;
+	margin: 0 3px 3px 0;
+	line-height: 28px;
+	border: 1px solid #C9C9C9;
+	min-width: 100px;
+	max-width: 180px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	cursor: pointer;
+}
+.proImgBox .good_class ul li.active,
+.proImgBox .good_class ul li:hover {
+	border: 1px solid #C40000;
+}
+
+.proImgBox .brand {
+	width: 190px;
+	text-align: center;
+	margin-left: 28px;
+	margin-top: -40px;
+}
+.proImgBox .brand li {
+	border-top: 1px solid #dadada;
+	min-height: 70px;
+}
+.proImgBox .brand li p {
+	line-height: 30px;
+}
+.proImgBox .brand li span {
+	display: inline-block;
+	padding: 0 5px;
+	background: #a48c79;
+	color: #fff;
+	border-radius: 8px;
+}
+.proImgBox .brand li.kefu img {
+	margin-top: 18px;
+}
+.proImgBox .brand .goods img {
+	width: 170px;
+}
+.good_main {
+	margin-top: 15px;
+}
+.good_main .left {
+	width: 198px;
+}
+.good_main .right .catBox,
+.good_main .left .catBox {
+	width: 100%;
+	border: 1px solid #dadada;
+	margin-bottom: 15px;
+}
+.good_main .left .catBox .class {
+	padding: 10px 0 10px 20px;
+}
+.good_main .left .catBox .class li {
+	float: left;
+	width: 86px;
+	line-height: 20px;
+}
+.good_main .left .catBox .class li a {
+	color: #999;
+}
+.good_main .left .catBox .class li a:hover {
+	color: #C40000;
+}
+
+.good_main .left .catBox .brand {
+	padding: 10px;
+}
+.good_main .left .catBox .brand a{
+	display: inline-block;
+	min-width: 50px;
+	color: #999;
+}
+.good_main .left .catBox .pro li {
+    padding: 10px 17px 0 17px;
+	-height: 257px;
+    border-bottom: 1px dashed #c9c9c9
+}
+.good_main .left .catBox .pro a {
+	color: #999;
+}
+.good_main .left .catBox .pro p,
+.good_main .left .catBox .pro a:hover {
+	color: #C40000;
+}
+.good_main .left .catBox .pro .btn {
+	display: inline-block;
+	padding: 2px 10px;
+	border: 1px solid #dadada;
+	margin: 0 0 10px 40px;
+}
+.good_main .left .catBox .pro .btn:hover {
+	border-color: #C40000;
+}
+.good_main .left .catBox .contain {
+	padding: 10px;
+}
+.good_main .left .catBox .contain img {
+	width: 50px;
+	height: 50px;
+}
+.good_main .left p.ad {
+	margin-bottom: 15px;
+}
+
+.good_main .right {
+	width: 976px;
+	margin-left: 26px;
+}
+.good_main .right .navList {
+	height: 35px;
+    border-top: 3px solid #999;
+    border-left: 1px inset #c9c9c9;
+    border-right: 1px inset #c9c9c9;
+    background: #F7F7F7;
+}
+.good_main .right .navList a {
+	display: inline-block;
+    line-height: 35px;
+    padding: 0 14px;
+    font-size: 14px;
+    color: #666; 
+}
+.good_main .right .navList a.active {
+	height: 37px;
+	margin-top: -3px;
+	background: #fff;
+	border-top: 3px solid #C40000;
+}
+.good_main .right .navContain .proAttr {
+	padding: 10px 0;
+    text-indent: 15px;
+    color: #333;
+    overflow: hidden;
+    line-height: 24px;
+    width: 100%;
+}  
+.good_main .right .navContain .proAttr li{
+	float: left;
+    width: 25%;   
+}
+.good_main .right .navContain>li {
+	display: none;
+}
+.good_main .right .navContain>li:nth-child(1){
+	display: block;
+}
+.good_main .right .navContain p.img_title {
+	text-align: center;
+	margin: 15px 0;
+}
+.good_main .right .navContain .imgList img {
+	display: block;
+	height: 445px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    padding: 72px 200px 105px 100px;
+    width: 449px;
+    background: url(../img/product_detail_bg.jpg) no-repeat scroll 0 0 transparent;
+}
+.good_main .right .navContain .tip p.title {
+	margin-top: 15px;
+    background: url(../img/tishiBg_07.gif) repeat-x;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+}
+.good_main .right .navContain .tip p span {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background: #C40000;
+	margin: 0 10px;
+}
+.good_main .right .navContain .tip p.contain {
+	margin-top: 14px;
+    color: #7d7d7d;
+    line-height: 24px;
+    padding: 0 20px;
+    text-indent: 24px;
+}
+.good_main .right .catBox {
+	margin-top: 20px;
+}
+.good_main .right .catBox p.title {
+	height: 35px;
+	background: #F7F7F7;
+	line-height: 35px;
+	padding-left: 15px;
+}
+.good_main .right .catBox ul {
+	margin-top: 15px;
+	padding: 0 10px;
+}
+.good_main .right .catBox li {
+	float: left;
+    margin-bottom: 10px;
+    width: 184px;
+    min-height: 220px;
+    border-bottom: 1px solid #c9c9c9;
+}
+.good_main .right .catBox li.b0 {
+	border: 0;
+}
+.good_main .right .catBox li p {
+	color: #C40000;
+}
+
+.good_main .right .box {
+	z-index: 99;
+	position: relative;
+	border: 1px solid #c9c9c9;
+    padding: 15px;
+} 
+.good_main .right .navContain .bbls {
+	border: 1px solid #dadada;
+	padding: 10px;
+} 
+.good_main .right .navContain .bbls .pl_star {
+	position: relative;
+	float: left;
+	width: 330px;
+}
+.good_main .right .navContain .bbls .pl_star span {
+	display: block;
+    float: left;
+    padding-left: 10px;
+    width: 100px; 
+    font: 700 22px/50px "微软雅黑";
+    color: #C40000; 
+}
+.good_main .right .navContain .bbls .pl_star span i {
+	position: absolute;
+	top: 45px;
+	left: 18px;
+	font: 14px/20px "";
+	color: #666;
+}
+.good_main .right .navContain .bbls .pl_star b.good {
+	
+	background-color: #ED0000;
+    background-image: linear-gradient(to bottom, #ED0000 0px, #A50000 100%);
+    width: 100px;
+    height: 10px;
+    overflow: hidden;
+}
+.good_main .right .navContain .bbls .pl_star b {
+	display: inline-block;
+	width: 100px;
+    height: 10px;
+    overflow: hidden;
+    background: none repeat scroll 0 0 #EFEFEF;
+}  
+.good_main .right .navContain .bbls .lms {
+	border-left: 1px solid #E4E4E4;
+    border-right: 1px solid #e4e4e4;
+    display: block;
+    float: left;
+    padding-left: 10px;
+    height: 90px;
+    line-height: 20px;
+    padding: 5px 20px 0;
+    width: 355px;
+    white-space: nowrap;   
+}
+.good_main .right .navContain .bbls .comments {
+	padding-left: 34px;
+	float: left;
+}
+.good_main .right .navContain .bbls .comments .btn{
+ 	display: block;
+ 	width: 100px;
+ 	height: 25px;
+ 	line-height: 25px;
+ 	color: #fff;
+ 	background: #C40000;
+ 	border-radius: 6px;
+ 	text-align: center;
+ 	margin-left: 50px;
+ } 
+ 
+.good_main .right .navContain .commentList {
+	margin-top: 15px;
+	border: 1px solid #dadada;
+}
+.good_main .right .navContain .comment_nav {
+    width: 100%;
+    background: url(../img/nav_bg.jpg) no-repeat;
+    height: 42px;
+    margin-bottom: 3px;
+    border-top: 2px solid 
+}
+.good_main .right .navContain .comment_nav a {
+	display: inline-block;
+    padding: 5px;
+    font: 700 15px/40px "";
+    color: #444;
+    text-align: center;
+    width: 145px;
+}
+.good_main .right .navContain .comment_nav a.active {
+	height: 43px;
+	border-top: 3px solid #C40000;
+	margin-top: -2px;
+}   
+.good_main .right .navContain .comment_contain {
+	margin-top: 15px;
+}
+.good_main .right .comment_contain .portrait {
+	width: 80px;
+    float: left;
+    text-align: center;
+    margin: 0 30px 0 20px;
+}
+.good_main .right .comment_contain .contain {
+	position: relative;
+	background: none repeat scroll 0 0 #fcfffa;
+    border: 1px solid #bcdc9b;
+    padding: 10px 15px 5px;
+    margin-bottom: 30px;
+    width: 752px;
+}
+.good_main .right .comment_contain .contain .arrow {
+ 	position: absolute;
+ 	top: 10px;
+ 	left: -16px;
+}   
+.good_main .right .comment_contain .contain .time {
+	line-height: 26px;
+	padding: 0 8px;
+	border-bottom: 1px solid #bcdc9b;
+}
+.good_main .right .comment_contain .contain .time span{
+	float: right;
+}
+.good_main .right .comment_contain .contain .portrait_contain {
+	margin-top: 15px;
+}
+.good_main .right .comment_contain .contain .btn {
+	float: right;
+	padding: 0 5px;
+    font-size: 10px;
+    width: auto;
+    height: 28px;
+    line-height: 25px;
+}
+
+.good_main .right .consult {
+	border: 1px solid #dadada;
+}
+.good_main .right .consult>li {
+	height: 100px;
+	padding: 0 10px;
+}
+.good_main .right .consult>li span {
+	display: block;
+	text-align: right;
+}
+.good_main .right .consult>li b {
+	color: #C40000;
+}
+.good_main .right .consult>li:nth-child(10),
+.good_main .right .consult>li:nth-child(8),
+.good_main .right .consult>li:nth-child(6),
+.good_main .right .consult>li:nth-child(4),
+.good_main .right .consult>li:nth-child(2) {
+	background: #F6F6F6;
+}
+.good_main .right .consult>li p i {
+	position: relative;
+	top: 4px;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url(../img/Detail_bg.gif) no-repeat -786px -71px ;
+}
