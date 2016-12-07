@@ -70,7 +70,7 @@ $(function(){
 	});
 	
 	//公共的缩小版购物车
-	var cart = JSON.parse( $.cookie('gjw_cart') );
+	var cart = JSON.parse( $.cookie('gjw_cart') || '{}' );
 	var money = 0;
 	var num = 0;
 	for(var key in cart){
