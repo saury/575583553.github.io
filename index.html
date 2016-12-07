@@ -13,6 +13,38 @@
 		<div class="head">
 			
 		</div>
+		
+		<!--楼层特效开始-->
+		<ul class="floorNav">
+			<li>
+				<div class="floor">1F</div>
+				<p>白酒<br />专馆</p>
+			</li>
+			<li>
+				<div class="floor">2F</div>
+				<p>白酒<br />专馆</p>
+			</li>
+			<li>
+				<div class="floor">3F</div>
+				<p>白酒<br />专馆</p>
+			</li>
+			<li>
+				<div class="floor">4F</div>
+				<p>白酒<br />专馆</p>
+			</li>
+			<li>
+				<div class="floor">5F</div>
+				<p>白酒<br />专馆</p>
+			</li>
+			<li>
+				<div class="floor">6F</div>
+				<p>白酒<br />专馆</p>
+			</li>
+			<li>
+				<div class="floor" style="transform: rotate(-90deg); font-weight: 700;">></div>
+			</li>
+		</ul>
+		<!--楼层特效结束-->
 		<!--页面主内容-->
 		<div class="banner">
 			<div class="img">
@@ -107,7 +139,7 @@
 							<ul class="clear">
 								<li>
 									<div class="goods">
-										<a href="javascript:;">
+										<a href="product.html">
 											<img src="img/main01.jpg" alt="" />
 										</a>
 									</div>
@@ -748,6 +780,11 @@
 		<script src="js/jquery.cookie.js"></script>
 		<script src="js/loadPublic.js"></script>
 		<script src="js/index.js"></script>
-		
+		<script>
+			$(function(){
+				//京东楼层效果
+				//楼层显示
+				console.log($('.floorNav').scrollTop());
+		</script>
 	</body>
 </html>

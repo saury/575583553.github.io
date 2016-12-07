@@ -1,6 +1,52 @@
 @charset "utf-8";
 
 /**************************************index.html*************************************************/
+.floorNav {
+	display: none;
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -654px;
+    margin-top: -154px;
+    width: 44px;
+    height: 308px;
+    overflow: hidden;
+    z-index: 6;
+}
+.floorNav li{
+	width: 44px;
+    height: 44px;
+    position: relative;
+    text-align: center;
+}
+.floorNav li .floor {
+	position: absolute;
+	top: 0;
+	left: 0;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 42px;
+    line-height: 42px;
+    background: #fafafa;
+    color: #c1c1c1;
+    text-align: center;
+}
+.floorNav li p {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+    border: 1px solid #d9000e;
+    font-size: 12px;
+    line-height: 16px;
+    padding-top: 5px;
+    width: 42px;
+    height: 37px;
+    background: #d9000e;
+    color: #fff;
+}
+    
+
 .banner {
 	position: relative;
 	height: 452px;
@@ -9,7 +55,7 @@
 	z-index: 999;
 	position: absolute;
 	top: 0;
-	right: 189px;
+	right: 109px;
 	width: 190px;
 	height: 429px;
 }
