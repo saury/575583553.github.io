@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/public.css" />
 		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
 	</head>
 	<body>
 		<!--加载头部html内容-->
@@ -16,31 +17,31 @@
 		
 		<!--楼层特效开始-->
 		<ul class="floorNav">
-			<li>
+			<li class="floorList">
 				<div class="floor">1F</div>
 				<p>白酒<br />专馆</p>
 			</li>
-			<li>
+			<li class="floorList">
 				<div class="floor">2F</div>
-				<p>白酒<br />专馆</p>
+				<p>洋酒<br />专馆</p>
 			</li>
-			<li>
+			<li class="floorList">
 				<div class="floor">3F</div>
-				<p>白酒<br />专馆</p>
+				<p>葡萄<br />酒馆</p>
 			</li>
-			<li>
+			<li class="floorList">
 				<div class="floor">4F</div>
-				<p>白酒<br />专馆</p>
+				<p>养生<br />酒馆</p>
 			</li>
-			<li>
+			<li class="floorList">
 				<div class="floor">5F</div>
-				<p>白酒<br />专馆</p>
+				<p>高端<br />收藏</p>
 			</li>
-			<li>
+			<li class="floorList">
 				<div class="floor">6F</div>
-				<p>白酒<br />专馆</p>
+				<p>品牌<br />推荐</p>
 			</li>
-			<li>
+			<li class="toTop">
 				<div class="floor" style="transform: rotate(-90deg); font-weight: 700;">></div>
 			</li>
 		</ul>
@@ -782,9 +783,85 @@
 		<script src="js/index.js"></script>
 		<script>
 			$(function(){
-				//京东楼层效果
-				//楼层显示
-				console.log($('.floorNav').scrollTop());
+				//京东楼层
+				var Floor = {
+					floor: $('.floorNav'),
+					floorItem: $('.main .liquor'),
+					floorList: $('.floorNav .floorList'),
+					flag: false,
+					init: function(){
+						this.scroll();
+						this.click();
+					},
+					scroll: function(){
+						var that = this;
+						$(window).scroll(function(e){
+							var scrollT = $(this).scrollTop();
+							//判断是否显示跟随楼层
+							if(scrollT > 1200){
+								that.floor.fadeIn(400);
+							}else{
+								that.floor.fadeOut(400);
+							}
+							//点击时停止楼层一层层跟随的特效
+							if(that.flag){
+								return;
+							}
+							//楼层跟随
+							for(var i=0; i<that.floorItem.length; i++ ){
+								//当前楼层距离顶部的高度
+								var t = that.floorItem.eq(i).offset().top;
+								//当前楼层的离开可是区域的最小高度
+								var bottom = t + that.floorItem.eq(i).width();
+								//处理边界
+								if( t > scrollT && t < scrollT + $(window).height()/2
+								){
+									that.floorList.eq(i).find('.floor').animate({
+										left: 21,
+										width: 0,
+										opacity: 0
+									});
+									that.floorList.eq(i).find('p').animate({
+										left: 0,
+										width: 42,
+										opacity: 1
+									});
+								}
+							}
+							
+						});
+					},
+					click: function(){
+						var that = this;
+						that.floorList.click(function(){
+							//如果点击时值改为true
+							that.flag = true;
+							//$(this).addClass('active').siblings().removeClass('active');
+							//对应的楼层距离顶部的距离
+							var t = that.floorItem.eq($(this).index()).offset().top;
+							//滚动条滑动
+							$('html body').animate({
+								scrollTop: t
+							},function(){
+								that.flag = false;
+							});
+						});
+					}
+				};
+				Floor.init();
+				
+				//固定收索框出现
+				$(window).scroll(function(){
+					if($(this).scrollTop() >= 800){
+						$('.fixSearch').show();
+					}else{
+						$('.fixSearch').hide();
+					}
+				});
+			});
+			
+			
+			
 		</script>
 	</body>
 </html>

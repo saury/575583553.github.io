@@ -6,6 +6,7 @@
 		<link rel="shortcut icon" href="http://www.gjw.com/favicon.ico">
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
 	</head>
 	<body>
 		<div class="login_head">
@@ -17,8 +18,10 @@
 					<p>如您已有账户 
 						<a href="login.html" style="color: #C40000;">请登录</a> 
 						&nbsp;
+						<i class="iconfont icon-ES-bangzhu" ></i>
 						<a href="javascript:;">帮助 </a>
 						&nbsp;
+						<i class="iconfont icon-kefu pl_2" style="color: #C40000;"></i>
 						<a href="javascript:;" style="color: #C40000;">在线帮助</a>
 					</p>
 				</div>
@@ -52,25 +55,34 @@
 									<div class="text_box">
 										<label for=""> 手机号 :</label>
 	                                	<input type="text" class="phone">
-	                            		<strong class="error"><b class="errorIcon"></b>请输入正确手机号</strong>
+	                            		<strong class="error">
+	                            			<i class="errorImg"></i>
+	                            			<b class="errorIcon">两次密码输入需一致</b>
+	                            		</strong>
 									</div>
 									<div class="text_box mgTop12">
-										<label for=""> 设置密码 :</label>
-	                                	<input type="password" class="psw" placeholder="6-20个非空格字符 ">
-	                            		<strong class="error"><b class="errorIcon"></b>请输入正确的密码</strong>
+										<label for="">设置密码 :</label>
+										<input type="password" class="psw" placeholder="6-20个非空格字符 ">
+	                            		<strong class="error">
+	                            			<i class="errorImg"></i>
+	                            			<b class="errorIcon">两次密码输入需一致</b>
+	                            		</strong>
 									</div>
 									<div class="text_box">
 										<label for=""> 确认密码:</label>
 	                                	<input type="password" class="psw"/>
-	                            		<strong class="error"><b class="errorIcon"></b>两次密码输入需一致</strong>
+	                            		<strong class="error">
+	                            			<i class="errorImg"></i>
+	                            			<b class="errorIcon">两次密码输入需一致</b>
+	                            		</strong>
 									</div>
 									<div class="mgTop12 codeBox clear">
 		                                <div class="text_box  codeText_s l">
 		                                    <label for="">验证码 :</label>
-		                                    <input type="text">
+		                                    <input type="text" style="width:80px;">
 		                                </div>
 	                                	<span class="codeNum l">1875</span>
-	                                	<a class="blue fl" onclick="javascript:changeCode()">换一张</a>
+	                                	<a class="blue fl" href="javascript:;">换一张</a>
 	                            	</div>
 	                            	<div class="text_box mgTop12">
 		                                <label for=""> 校验码 :</label>
@@ -88,26 +100,35 @@
 								<div class="mgnAuto">
 									<div class="text_box">
 										<label for=""> <b class="red">*</b>邮箱 :</label>
-	                                	<input type="text" class="phone">
-	                            		<strong class="error"><b class="errorIcon"></b>请输入正确手机号</strong>
+	                                	<input type="text" class="maile">
+	                            		<strong class="error">
+	                            			<i class="errorImg"></i>
+	                            			<b class="errorIcon">两次密码输入需一致</b>
+	                            		</strong>
 									</div>
 									<div class="text_box mgTop12">
 										<label for=""><b class="red">*</b>设置密码 :</label><!--
 	                                	--><input type="password" class="psw" placeholder="6-20个非空格字符 ">
-	                            		<strong class="error"><b class="errorIcon"></b>请输入正确的密码</strong>
+	                            		<strong class="error">
+	                            			<i class="errorImg"></i>
+	                            			<b class="errorIcon">请输入正确的密码</b>
+	                            		</strong>
 									</div>
 									<div class="text_box">
 										<label for=""><b class="red">*</b>确认密码:</label>
 	                                	<input type="password" class="psw"/>
-	                            		<strong class="error"><b class="errorIcon"></b>两次密码输入需一致</strong>
+	                            		<strong class="error">
+	                            			<i class="errorImg"></i>
+	                            			<b class="errorIcon">两次密码输入需一致</b>
+	                            		</strong>
 									</div>
 									<div class="mgTop12 codeBox clear">
 		                                <div class="text_box  codeText_s l">
 		                                    <label for="">验证码 :</label>
-		                                    <input type="text">
+		                                    <input type="text" style="width:80px";>
 		                                </div>
 	                                	<span class="codeNum l">1875</span>
-	                                	<a class="blue fl" onclick="javascript:changeCode()">换一张</a>
+	                                	<a class="blue fl" href="javascript:;">换一张</a>
 	                            	</div>
 	                            	<div class="text_box mgTop12">
 		                                <label for=""> 校验码 :</label>
@@ -173,7 +194,52 @@
 						left: -index*600
 					},600);
 				});
-				
+				//注册验证
+				//随机生成验证码
+				var reg = {
+					code: $('.codeNum '),
+					error: $('.error'),
+					errorIcon: $('.errorIcon'),
+					init: function(){
+						this.randomCode();
+						this.blue();
+						this.phone();
+					},
+					//随机生成验证码
+					randomCode: function(){
+						var num = parseInt( Math.random()*10000 ) + 1000;
+						this.code.html(num);
+					},
+					//点击更换验证码
+					blue: function(){
+						var that = this;
+						$('.blue').click(function(){
+							that.randomCode();
+						});
+					},
+					//验证手机号
+					phone: function(){
+						var that = this;
+						$('.phone').blur(function(){
+							var value = $(this).val();
+							//手机号为空
+							if(value.length == 0){
+								$(this).next().find('.errorIcon').html('请输入手机号');
+								$(this).next().show();
+							}
+							var reg = /^(136|177|130|150|180)\d{8}$/;
+							if(!reg.test(value)){
+								$(this).next().find('.errorIcon').html('请输入正确的手机号');
+								$(this).next().show();
+							}
+						});
+						$('.phone').focus(function(){
+							$(this).next().hide();
+						});
+						
+					}
+				};
+				reg.init();
 			});
 		</script>
 	</body>

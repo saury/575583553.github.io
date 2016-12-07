@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/public.css" />
 		<link rel="stylesheet" href="css/proInfo.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
 	</head>
 	<body>
 		<!--载入页面开头-->
@@ -44,7 +45,7 @@
 						<a href="javascrip:;"></a>
 						<a href="javascrip:;"></a>
 						<a href="javascrip:;"></a>
-						<a href="javascrip:;"></a>
+						<a href="javascrip:;" class="more"></a>
 						<i>加入收藏</i>
 						<div class="addShare">
 							<p class="title">分享到</p>
@@ -858,6 +859,7 @@
 		<script src="js/proInfo.js"></script>
 		<script>
 			$(function(){
+				//商品分类
 				$('.good_class ul').on('click','li',function(){
 					$(this).addClass('active').siblings().removeClass('active');
 				})
@@ -871,6 +873,17 @@
 					$('.navContain>li').eq(index).show()
 										   .siblings().hide();
 				});
+				
+				//分享更多的 
+				$('.share .more').mouseenter(function(){
+					$('.addShare').delay(200).show();
+				});
+				$('.share').mouseleave(function(){
+					$('.addShare').stop(true).hide();
+				});
+				
+				//
+				
 			});
 		</script>
 	</body>

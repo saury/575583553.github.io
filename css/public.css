@@ -64,19 +64,89 @@
 }
 
 .rightBar {
-	z-index: 9999;
+	z-index: 999999;
 	position: fixed;
 	top: 0;
 	right: 0;
 	height: 100%;
 	width: 38px;
 	background: #EAEAEA;
+	text-align: center;
 }
+.rightBar .iconfont {
+	font-size: 20px;
+	-color: #C40000;
+}
+.rightBar ul {
+	position: absolute;
+    left: 0;
+    top: 16%;
+    width: 32px;
+    height: 432px;
+}
+.rightBar ul li {
+	position: relative;
+	padding: 4px 4px 0 4px;
+	height: 36px;
+    cursor: pointer;
+    border-bottom: 1px solid #c8c8c8;
+    color: #C40000;
+}
+.rightBar ul li:hover {
+	background: #C40000;
+	color: #fff;
+}
+.rightBar ul li.buy_car {
+	height: 104px;
+}
+.rightBar .iconBox_tips {
+	display: none;
+	opacity: 0;
+	position: absolute;
+	right: 80px;
+    top: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 108px;
+    background: #494949;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+}
+.rightBar .iconBox_tips .tips_arrow {
+	position: absolute;
+    right: -8px;
+    top: 12px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    font-size: 16px;
+    color: #494949;
+}
+.rightBar .iconBox_Img {
+	width: 205px;
+    height: 195px;
+    background: #fff;
+    box-shadow: 0 0 1px rgba(0,0,0,0.6)
+}
+.rightBar .tips_qrcode {
+	width: 205px;
+    height: 195px;
+}
+.rightBar .tips_qrcode img {
+	width: 100%;
+	
+}
+.mgTop50 {
+	margin-top: 50px;
+}    
+
 
 .fixSearch {
 	display: none;
-	z-index: 999;
-	position: absolute;
+	z-index: 999999;
+	position: fixed;
 	top: 0;
 	padding-top: 8px;
 	width: 100%;

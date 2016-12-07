@@ -17,6 +17,7 @@ $(function(){
 				that.redu();
 				that.inputChange();
 				that.addCart();
+				that.changeImg();
 			})
 		},
 		//设置数据
@@ -52,6 +53,15 @@ $(function(){
 			this.stock = this.data.stock
 			$('.pro_count .stock').html(this.stock);
 			
+		},
+		//改变商品的主图
+		changeImg: function(){
+			$('.proImgList li').mouseenter(function(){
+				var src = $(this).find('img').attr('src');
+				$('.proImgBig').find('img').attr('src',src);
+				$(this).addClass('active').siblings().removeClass('active');
+				$('.proImgBox .bigImg').find('img').attr('src',src);
+			});
 		},
 		//商品购买数量加加
 		add: function(){

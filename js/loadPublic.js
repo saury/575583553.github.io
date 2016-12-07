@@ -1,9 +1,10 @@
 $(function(){
 	$('.head').load('head.html',function(){
+		//
 		$('.good_info .navbar_all').hover(function(){
 			$('.main').stop(true).fadeToggle(400);
-			
 		});
+		
 		//头部悬浮广告
 		/*$('.noticeBar .noticeBar_img .small').animate({
 			top: 83
@@ -48,7 +49,32 @@ $(function(){
 			var item = $('.er_list .op');
 			$('.er_list').hide();
 		});
+		
+		//右侧固定栏效果
+		$('.rightBar li').mouseenter(function(){
+			$(this).find('.iconBox_tips').show();
+			$(this).find('.iconBox_tips').animate({
+				right: 32,
+				opacity: 1
+			},500);
+		});
+		$('.rightBar li').mouseleave(function(){
+			$(this).find('.iconBox_tips').animate({
+				right: 80,
+				opacity: 0
+			},500);
+			$(this).find('.iconBox_tips').hide();
+		});
+		
+		//回到顶部
+		$('.toTop').click(function(){
+			$('html body').animate({
+				scrollTop: 0
+			},600);
+		});
+		
 	});
+	//头部加载结束
 	
 	//加载尾部内容
 	$('.foot').load('footer.html',function(){
@@ -70,7 +96,7 @@ $(function(){
 	});
 	
 	//公共的缩小版购物车
-	var cart = JSON.parse( $.cookie('gjw_cart') || '{}' );
+	var cart = JSON.parse( $.cookie('gjw_cart') || '{}' );//要做兼容'{}'
 	var money = 0;
 	var num = 0;
 	for(var key in cart){
@@ -106,4 +132,51 @@ $(function(){
 			
 		})(key);
 	}
+	//放大镜效果
+	var glass = {
+		smallWrap: $('.proImg .proImgBig'),
+		filter: $('.modal'),
+		largeWrap: $('.bigImg'),
+		largeImg: $('.bigImg img'),
+		//初始化方法
+		init: function(){
+			this.mousemove();
+			this.hover();
+		},
+		//鼠标移动
+		mousemove: function(){
+			var that = this;
+			this.smallWrap.mousemove(function(e){
+				//获取图片盒子相对市口的上边距和下边距
+				var t = $(this).offset().top - $(window).scrollTop();
+				var l = $(this).offset().left;
+				//获取鼠标的相对位置
+				e = e || window.event;
+				var left = e.clientX - l;
+				var top = e.clientY - t;
+				//处理left和top，做边缘处理（防止越界）
+				left = left < 100 ? 100 : (left > 318) ? 318 : left;
+				top = top < 100 ? 100 : (top > 300) ? 300 : top;
+				
+				//改变滤镜的位置
+				that.filter.css({
+					left: left-100, //-100是为了让鼠标在滤镜的中心位置
+					top: top-100
+				});
+				that.largeImg.css({
+					left: -2*(left-100),
+					top: -2*(top-100)
+				});
+			});
+		},
+		hover: function(){
+			var that = this;
+			this.smallWrap.stop(true).hover(function(){
+				that.filter.toggle();
+				that.largeWrap.toggle();
+			});
+		}
+	};
+	
+	glass.init();
 });

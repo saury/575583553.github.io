@@ -23,7 +23,7 @@ input,textarea{outline:none;}
 .l{float:left;}
 .r{float:right;}
 .pl_1{position:relative;top:-1px;}
-.pl_2{position:relative;top:-2px;}
+.pl_2{position:relative;top:2px;}
 
 .wrap {
 	width: 1200px;
