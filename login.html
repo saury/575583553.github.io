@@ -44,11 +44,11 @@
 							</div>
 							<div class="text_box">
 								<i class="user"></i>
-								<input type="text" name="txtUserName" placeholder="邮箱/手机号码">
+								<input type="text" class="txtUserName" placeholder="邮箱/手机号码">
 							</div>
 							<div class="text_box">
 								<i class="pwd"></i>
-								<input type="password" name="txtPsw" placeholder="邮箱/手机号码">
+								<input type="password" class="txtPsw">
 							</div>
 							<div class="loginCode">
 								<input name="txtCode" type="text" id="txtCode" class="codeText" placeholder="请输入验证码">
@@ -113,8 +113,74 @@
 				},80);
 				
 				//登录验证
+				//获取json
+				var user = null;
 				
+				$('.loginBtn a').click(function(){
+				});
 				
+				var login = {
+					btn: $('.loginBtn a'),
+					user,
+					init: function(){
+						this.getJson();
+						this.click();
+						this.code();
+						this.blue();
+					},
+					getJson: function(){
+						var that = this;
+						$.getJSON('js/user.json',function(date){
+							that.user = date;
+						});
+					},
+					code:function(){
+						var num = parseInt( Math.random()*9000 ) + 1000;
+						$('.codeNum').html(num);
+					},
+					blue: function(){
+						var that = this;
+						$('.blue').click(function(){
+							that.code();
+						});
+					},
+					click: function(){
+						var that = this;
+						this.btn.click(function(){
+							var name = $('.txtUserName').val();
+							var psw = $('.txtPsw').val();
+							var code = $('.codeText').val();
+							var num = $('.codeNum').html();
+							//用户名或密码为空
+							if(name.length == 0 || psw.length == 0){
+								alert('用户名或密码不能为空');
+								return;
+							}
+							//验证码为空时
+							if(code.length == 0){
+								alert('验证码不能为空');
+								return;
+							}
+							//判断输入是否正确
+							if(that.user[name]){
+								if(code != num ){
+									alert('验证码输入有误');
+									that.code();
+									return;
+								}
+								if(that.user[name].psw == psw){
+									if(confirm('登录成功')){
+										location = 'index.html?name='+name;
+										return;
+									}
+								}
+							}
+							//其他的情况
+							alert('用户名或密码有误');
+						});
+					}
+				};
+				login.init();
 			});
 		</script>
 	</body>

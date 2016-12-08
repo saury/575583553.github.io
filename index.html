@@ -816,12 +816,25 @@
 								//处理边界
 								if( t > scrollT && t < scrollT + $(window).height()/2
 								){
-									that.floorList.eq(i).find('.floor').animate({
+									//
+									that.floorList.eq(i).find('.floor').stop(true).animate({
 										left: 21,
 										width: 0,
 										opacity: 0
 									});
-									that.floorList.eq(i).find('p').animate({
+									//
+									that.floorList.eq(i).siblings().find('.floor').stop(true).animate({
+										left: 0,
+										width: 42,
+										opacity: 1
+									});
+									that.floorList.eq(i).siblings().find('p').stop(true).animate({
+										left: 21,
+										width: 0,
+										opacity: 0
+									});
+									//
+									that.floorList.eq(i).find('p').stop(true).animate({
 										left: 0,
 										width: 42,
 										opacity: 1
@@ -836,12 +849,33 @@
 						that.floorList.click(function(){
 							//如果点击时值改为true
 							that.flag = true;
-							//$(this).addClass('active').siblings().removeClass('active');
+							$(this).find('.floor').stop(true).animate({
+								left: 21,
+								width: 0,
+								opacity: 0
+							});
+							//
+							$(this).siblings().find('.floor').stop(true).animate({
+								left: 0,
+								width: 42,
+								opacity: 1
+							});
+							$(this).siblings().find('p').stop(true).animate({
+								left: 21,
+								width: 0,
+								opacity: 0
+							});
+							//
+							$(this).find('p').stop(true).animate({
+								left: 0,
+								width: 42,
+								opacity: 1
+							});
 							//对应的楼层距离顶部的距离
 							var t = that.floorItem.eq($(this).index()).offset().top;
 							//滚动条滑动
 							$('html body').animate({
-								scrollTop: t
+								scrollTop: t - 62
 							},function(){
 								that.flag = false;
 							});
@@ -853,14 +887,15 @@
 				//固定收索框出现
 				$(window).scroll(function(){
 					if($(this).scrollTop() >= 800){
-						$('.fixSearch').show();
+						$('.fixSearch').fadeIn(400);
 					}else{
-						$('.fixSearch').hide();
+						$('.fixSearch').fadeOut(400);
 					}
 				});
+				
+				
+				
 			});
-			
-			
 			
 		</script>
 	</body>

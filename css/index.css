@@ -512,6 +512,25 @@
     line-height: 52px;
     border: 1px solid #c5c5c5;
 }
+.errBox {
+	border: 1px solid #0066CB;
+	box-shadow: 0 0 5px #0066CB;
+}
+.outLIne {
+	border: 2px solid rgb(169,68,66);
+	box-shadow: 0 0 5px rgb(169,68,66);
+}
+.meetIcon {
+	position: absolute;
+    right: 10px;
+    top: 19px;
+    width: 16px;
+    height: 13px;
+    background: url(../img/loginIcon.gif) no-repeat 0 -21px;
+}
+.mgnAuto .rightReg {
+	border-color: #3c763d;
+}
 .login_inner .login_from .text_box input {
 	width: 260px;
     border: none;

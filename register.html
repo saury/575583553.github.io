@@ -60,7 +60,7 @@
 	                            			<b class="errorIcon">两次密码输入需一致</b>
 	                            		</strong>
 									</div>
-									<div class="text_box mgTop12">
+									<div class="text_box" style="margin-top: 12px;">
 										<label for="">设置密码 :</label>
 										<input type="password" class="psw" placeholder="6-20个非空格字符 ">
 	                            		<strong class="error">
@@ -70,7 +70,7 @@
 									</div>
 									<div class="text_box">
 										<label for=""> 确认密码:</label>
-	                                	<input type="password" class="psw"/>
+	                                	<input type="password" class="rePsw"/>
 	                            		<strong class="error">
 	                            			<i class="errorImg"></i>
 	                            			<b class="errorIcon">两次密码输入需一致</b>
@@ -106,7 +106,7 @@
 	                            			<b class="errorIcon">两次密码输入需一致</b>
 	                            		</strong>
 									</div>
-									<div class="text_box mgTop12">
+									<div class="text_box" style="margin-top: 12px;">
 										<label for=""><b class="red">*</b>设置密码 :</label><!--
 	                                	--><input type="password" class="psw" placeholder="6-20个非空格字符 ">
 	                            		<strong class="error">
@@ -116,7 +116,7 @@
 									</div>
 									<div class="text_box">
 										<label for=""><b class="red">*</b>确认密码:</label>
-	                                	<input type="password" class="psw"/>
+	                                	<input type="password" class="rePsw"/>
 	                            		<strong class="error">
 	                            			<i class="errorImg"></i>
 	                            			<b class="errorIcon">两次密码输入需一致</b>
@@ -139,7 +139,7 @@
 		                            <p class="xieyi">点击注册，表示您同意购酒网 
 		                            	<a class="blue" href="http://www.gjw.com/help/show-id-47.htm" target="_blank">《服务协议》</a>
 		                            </p>
-		                            <a href="javascript:;" class="regBtn">注册</a>
+		                            <a href="javascript:;" class="regBtn" disabled="false">注册</a>
 								</div>
 							</form>
 						</div>
@@ -200,14 +200,20 @@
 					code: $('.codeNum '),
 					error: $('.error'),
 					errorIcon: $('.errorIcon'),
+					count: 0,
 					init: function(){
 						this.randomCode();
 						this.blue();
 						this.phone();
+						this.psw();
+						this.maile();
+						this.rePsw();
+						this.regCode();
+						this.btn();
 					},
 					//随机生成验证码
 					randomCode: function(){
-						var num = parseInt( Math.random()*10000 ) + 1000;
+						var num = parseInt( Math.random()*9000 ) + 1000;
 						this.code.html(num);
 					},
 					//点击更换验证码
@@ -219,24 +225,128 @@
 					},
 					//验证手机号
 					phone: function(){
+						var reg = /^(136|177|130|150|180)\d{8}$/;
+						this.reg($('.phone'),reg,'手机');
+					},
+					//验证密码
+					psw: function(){
+						var reg = /^\w{6,20}$/;
+						this.reg($('.psw'),reg,'密码');
+					},
+					maile: function(){
+						var reg = /^[a-z0-9]+\@[a-z0-9]+\.[a-z]{2,5}$/;
+						this.reg($('.maile'),reg,'邮箱');
+					},
+					rePsw: function(){
 						var that = this;
-						$('.phone').blur(function(){
+						$('.rePsw').blur(function(){
+							var value = $(this).val();
+							var v = $('.psw').val();
+							if(value.length == 0){
+								$(this).parent().attr('class','text_box');
+								return;
+							}
+							if(value != v){
+								$(this).next().find('.errorIcon').html('两次密码需一致');
+								$(this).next().show();
+								$(this).parent().attr('class','text_box outLIne');
+								return;
+							}
+							$(this).parent().attr('class','text_box rightReg');
+							$(this).next().show().attr('class','meetIcon').html('');
+							that.count++;
+						});
+						//密码框，改变父框
+						$('.rePsw').focus(function(){
+							$(this).next().hide();
+							$(this).parent().attr('class','text_box errBox');
+						});
+					},
+					regCode: function(){
+						var that = this;
+						$('.codeText_s input').blur(function(){
+							var value = $(this).val();
+							var v = $('.codeNum').html();
+							$(this).parent().attr('class','text_box codeText_s l');
+							if(value.length == 0){
+								return;
+							}
+							if(value != v && value.length != 0){
+								alert('验证码输入不正确');
+								that.randomCode();
+								return;
+							}
+							$(this).parent().addClass('rightReg');
+							that.count++;
+						});
+						$('.codeText_s input').focus(function(){
+							$(this).parent().attr('class','text_box codeText_s l errBox');
+						});
+					},
+					//封装的验证方法
+					reg: function(input,regText,type){
+						var that = this;
+						input.blur(function(){
 							var value = $(this).val();
 							//手机号为空
 							if(value.length == 0){
-								$(this).next().find('.errorIcon').html('请输入手机号');
+								$(this).next().find('.errorIcon').html('请输入'+type);
 								$(this).next().show();
+								$(this).parent().attr('class','text_box outLIne');
+								return;
 							}
-							var reg = /^(136|177|130|150|180)\d{8}$/;
+							var reg = regText;
 							if(!reg.test(value)){
-								$(this).next().find('.errorIcon').html('请输入正确的手机号');
+								$(this).next().find('.errorIcon').html('请输入正确的'+type);
 								$(this).next().show();
+								$(this).parent().attr('class','text_box outLIne');
+								return;
 							}
+							//验证成功的结果
+							$(this).parent().attr('class','text_box rightReg');
+							$(this).next().show().attr('class','meetIcon').html('');
+							that.count++;
 						});
-						$('.phone').focus(function(){
+						//号码框获焦，改变父框
+						input.focus(function(){
 							$(this).next().hide();
+							$(this).parent().attr('class','text_box errBox');
+							
 						});
-						
+					},
+					//点击注册
+					btn: function(){
+						var that = this;
+						$('.regBtn:eq(0)').click(function(){
+							var phoneV = $('.phone').val();
+							var pswV = $('.psw').val();
+							var rePswV = $('.rePsw').val();
+							var codeV = $('.codeNum').val();
+							var maileV = $('.maile').val();
+							if(that.count >= 4) {
+								if(confirm('注册成功，跳转至登录页面。')){
+									location = 'login.html';
+									return;
+								}
+							}
+							if(phoneV.length == 0 || maileV.length == 0){
+								alert('请输入手机号或邮箱');
+								return;
+							}
+							if(pswV.length == 0){
+								alert('密码不能为空');
+								return;
+							}
+							if(rePswV.length == 0 ){
+								alert('密码不能为空');
+								return;
+							}
+							if(codeV.length == 0 ){
+								alert('密码不能为空');
+								return;
+							}
+							
+						});
 					}
 				};
 				reg.init();
